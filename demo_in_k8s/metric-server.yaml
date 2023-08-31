@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: metric-server
+  labels:
+    app: metric-server
+spec:
+  containers:
+  - name: metric-server-container
+    image:  docker.build.91app.io/metric-server:latest
+    ports:
+    - containerPort: 8081
+  imagePullSecrets:
+    - name: 91app-build-site
